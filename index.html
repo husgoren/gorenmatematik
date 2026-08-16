@@ -1050,46 +1050,45 @@
           uygun çalışma sistemini birlikte belirleyelim.
         </p>
 
-        <form onsubmit="basvuruGonder(event)">
+        <script>
 
-  <input
-    id="ogrenciAdi"
-    type="text"
-    placeholder="Öğrenci Adı"
-    required
-  >
+function basvuruGonder(event) {
 
-  <select id="sinif" required>
-    <option value="">Sınıf Seçiniz</option>
-    <option>5. Sınıf</option>
-    <option>6. Sınıf</option>
-    <option>7. Sınıf</option>
-    <option>8. Sınıf / LGS</option>
-  </select>
+  event.preventDefault();
 
-  <input
-    id="telefon"
-    type="tel"
-    placeholder="Telefon Numarası"
-    required
-  >
+  const ogrenciAdi =
+    document.getElementById("ogrenciAdi").value;
 
-  <textarea
-    id="aciklama"
-    rows="4"
-    placeholder="Öğrenci hakkında kısa bilgi..."
-  ></textarea>
+  const sinif =
+    document.getElementById("sinif").value;
 
-  <button
-    class="btn btn-primary form-button"
-    type="submit"
-  >
-    WhatsApp'tan Başvuru Gönder
-  </button>
+  const telefon =
+    document.getElementById("telefon").value;
 
-</form>
-            
+  const aciklama =
+    document.getElementById("aciklama").value;
 
+  const mesaj =
+`Merhaba, Gören Matematik web sitesi üzerinden özel ders başvurusu yapmak istiyorum.
+
+👤 Öğrenci Adı: ${ogrenciAdi}
+🎓 Sınıf: ${sinif}
+📞 İletişim Numarası: ${telefon}
+
+📝 Öğrenci Hakkında:
+${aciklama || "Bilgi belirtilmedi."}
+
+Özel ders sistemi hakkında bilgi almak istiyorum.`;
+
+  const whatsappURL =
+    "https://wa.me/905302333126?text=" +
+    encodeURIComponent(mesaj);
+
+  window.open(whatsappURL, "_blank");
+
+}
+
+</script>
           <select required>
             <option value="">Sınıf Seçiniz</option>
             <option>5. Sınıf</option>
