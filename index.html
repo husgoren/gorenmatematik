@@ -1,2303 +1,1267 @@
 <!DOCTYPE html>
 <html lang="tr">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-    <title>Gören Matematik | Matematiği Gör, Hedefine Ulaş</title>
-
-    <meta name="description" content="5, 6, 7 ve 8. sınıf öğrencileri için modern ve kişiye özel matematik eğitimi. LGS hazırlık, özel ders ve ücretsiz matematik kaynakları.">
-
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        html {
-            scroll-behavior: smooth;
-        }
-
-        body {
-            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif;
-            background: #f7f8fa;
-            color: #171a1f;
-            line-height: 1.6;
-        }
-
-        a {
-            text-decoration: none;
-            color: inherit;
-        }
-
-        .container {
-            width: min(1180px, 90%);
-            margin: auto;
-        }
-
-        /* NAVBAR */
-
-        header {
-            position: sticky;
-            top: 0;
-            z-index: 1000;
-            background: rgba(247, 248, 250, 0.92);
-            backdrop-filter: blur(14px);
-            border-bottom: 1px solid #e5e7eb;
-        }
-
-        nav {
-            height: 76px;
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-        }
-
-        .logo img {
-    width: 150px;
-    height: auto;
-    display: block;
-}
-
-        .nav-links {
-            display: flex;
-            align-items: center;
-            gap: 30px;
-            font-size: 14px;
-            color: #555c66;
-        }
-
-        .nav-links a {
-            transition: 0.25s;
-        }
-
-        .nav-links a:hover {
-            color: #111827;
-        }
-
-        .nav-button {
-            background: #171a1f;
-            color: white;
-            padding: 11px 19px;
-            border-radius: 8px;
-            font-size: 14px;
-            font-weight: 600;
-            transition: 0.25s;
-        }
-
-        .nav-button:hover {
-            transform: translateY(-2px);
-            background: #292e35;
-        }
-
-        /* HERO */
-
-        .hero {
-            min-height: 680px;
-            display: flex;
-            align-items: center;
-            padding: 90px 0;
-        }
-
-        .hero-grid {
-            display: grid;
-            grid-template-columns: 1.1fr 0.9fr;
-            gap: 70px;
-            align-items: center;
-        }
-
-        .eyebrow {
-            font-size: 13px;
-            font-weight: 700;
-            letter-spacing: 2px;
-            text-transform: uppercase;
-            color: #68707b;
-            margin-bottom: 22px;
-        }
-
-        .hero h1 {
-            font-size: clamp(48px, 6vw, 78px);
-            line-height: 0.98;
-            letter-spacing: -4px;
-            max-width: 700px;
-            margin-bottom: 28px;
-        }
-
-        .hero h1 span {
-            color: #6b7280;
-        }
-
-        .hero-text {
-            max-width: 570px;
-            font-size: 18px;
-            color: #656c76;
-            margin-bottom: 34px;
-        }
-
-        .hero-buttons {
-            display: flex;
-            gap: 14px;
-            flex-wrap: wrap;
-        }
-
-        .primary-button,
-        .secondary-button {
-            padding: 14px 22px;
-            border-radius: 9px;
-            font-weight: 600;
-            font-size: 14px;
-            transition: 0.25s;
-        }
-
-        .primary-button {
-            background: #171a1f;
-            color: white;
-        }
-
-        .primary-button:hover {
-            transform: translateY(-2px);
-            background: #292e35;
-        }
-
-        .secondary-button {
-            border: 1px solid #d7dbe0;
-            background: white;
-            color: #24282e;
-        }
-
-        .secondary-button:hover {
-            transform: translateY(-2px);
-            border-color: #aeb4bb;
-        }
-
-        /* MATHEMATICAL VISUAL */
-
-        .hero-visual {
-            height: 440px;
-            border-radius: 28px;
-            background: #171a1f;
-            position: relative;
-            overflow: hidden;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
-
-        .hero-visual::before,
-        .hero-visual::after {
-            content: "";
-            position: absolute;
-            border: 1px solid rgba(255,255,255,0.12);
-            border-radius: 50%;
-        }
-
-        .hero-visual::before {
-            width: 360px;
-            height: 360px;
-        }
-
-        .hero-visual::after {
-            width: 230px;
-            height: 230px;
-        }
-
-        .math-symbol {
-            position: relative;
-            z-index: 2;
-            color: white;
-            font-size: 100px;
-            font-weight: 300;
-            letter-spacing: -10px;
-        }
-
-        .math-small {
-            position: absolute;
-            color: rgba(255,255,255,0.3);
-            font-size: 22px;
-        }
-
-        .symbol-one {
-            top: 60px;
-            left: 60px;
-        }
-
-        .symbol-two {
-            right: 55px;
-            top: 115px;
-        }
-
-        .symbol-three {
-            bottom: 60px;
-            left: 75px;
-        }
-
-        .symbol-four {
-            right: 75px;
-            bottom: 70px;
-        }
-
-        /* SECTION */
-
-        section {
-            padding: 110px 0;
-        }
-
-        .section-label {
-            color: #737b85;
-            font-size: 12px;
-            font-weight: 700;
-            letter-spacing: 2px;
-            text-transform: uppercase;
-            margin-bottom: 16px;
-        }
-
-        .section-title {
-            font-size: clamp(34px, 4vw, 52px);
-            letter-spacing: -2px;
-            line-height: 1.05;
-            max-width: 700px;
-            margin-bottom: 22px;
-        }
-
-        .section-description {
-            color: #6b7280;
-            max-width: 620px;
-            font-size: 17px;
-        }
-
-        /* CLASSES */
-
-        .classes {
-            background: white;
-        }
-
-        .class-grid {
-            margin-top: 50px;
-            display: grid;
-            grid-template-columns: repeat(4, 1fr);
-            gap: 16px;
-        }
-
-        .class-card {
-            min-height: 270px;
-            border: 1px solid #e5e7eb;
-            border-radius: 18px;
-            padding: 28px;
-            display: flex;
-            flex-direction: column;
-            justify-content: space-between;
-            transition: 0.3s;
-            background: #fafafa;
-        }
-
-        .class-card:hover {
-            transform: translateY(-6px);
-            border-color: #c8cdd3;
-            box-shadow: 0 18px 45px rgba(20,25,30,0.07);
-        }
-
-        .class-number {
-            font-size: 13px;
-            color: #8a919a;
-            font-weight: 700;
-            letter-spacing: 1px;
-        }
-
-        .class-card h3 {
-            font-size: 25px;
-            letter-spacing: -1px;
-            margin-top: auto;
-            margin-bottom: 10px;
-        }
-
-        .class-card p {
-            font-size: 14px;
-            color: #747b84;
-        }
-
-        .class-link {
-            margin-top: 25px;
-            font-size: 13px;
-            font-weight: 700;
-        }
-
-        /* SYSTEM */
-
-        .system {
-            background: #f7f8fa;
-        }
-
-        .system-header {
-            display: flex;
-            justify-content: space-between;
-            gap: 50px;
-            align-items: end;
-            margin-bottom: 60px;
-        }
-
-        .system-steps {
-            display: grid;
-            grid-template-columns: repeat(6, 1fr);
-            border-top: 1px solid #dfe2e6;
-        }
-
-        .step {
-            padding: 30px 18px 10px 0;
-            border-right: 1px solid #dfe2e6;
-            margin-right: 18px;
-        }
-
-        .step:last-child {
-            border-right: none;
-        }
-
-        .step-number {
-            font-size: 12px;
-            color: #8a919a;
-            margin-bottom: 25px;
-        }
-
-        .step h3 {
-            font-size: 17px;
-            margin-bottom: 8px;
-        }
-
-        .step p {
-            font-size: 13px;
-            color: #737a84;
-        }
-
-        /* PRIVATE LESSON */
-
-        .private {
-            background: #171a1f;
-            color: white;
-        }
-
-        .private-grid {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 80px;
-            align-items: center;
-        }
-
-        .private .section-label {
-            color: #9ca3af;
-        }
-
-        .private .section-title {
-            color: white;
-        }
-
-        .private .section-description {
-            color: #aeb4bc;
-        }
-
-        .features {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 12px;
-            margin-top: 35px;
-        }
-
-        .feature {
-            border: 1px solid rgba(255,255,255,0.12);
-            border-radius: 12px;
-            padding: 18px;
-            color: #d5d8dc;
-            font-size: 14px;
-        }
-
-        .private-button {
-            display: inline-block;
-            margin-top: 35px;
-            background: white;
-            color: #171a1f;
-            padding: 14px 22px;
-            border-radius: 8px;
-            font-size: 14px;
-            font-weight: 700;
-        }
-
-        /* RESOURCES */
-
-        .resources {
-            background: white;
-        }
-
-        .resource-grid {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 18px;
-            margin-top: 45px;
-        }
-
-        .resource-card {
-            border: 1px solid #e5e7eb;
-            border-radius: 16px;
-            padding: 30px;
-            min-height: 190px;
-        }
-
-        .resource-card h3 {
-            font-size: 20px;
-            margin-bottom: 12px;
-        }
-
-        .resource-card p {
-            color: #737a84;
-            font-size: 14px;
-        }
-
-        /* ABOUT */
-
-        .about {
-            background: #f7f8fa;
-        }
-
-        .about-grid {
-            display: grid;
-            grid-template-columns: 0.8fr 1.2fr;
-            gap: 90px;
-            align-items: center;
-        }
-
-        .about-box {
-            height: 390px;
-            background: #e9ebee;
-            border-radius: 22px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: #858c95;
-            font-size: 14px;
-        }
-
-        .about-text h2 {
-            font-size: 42px;
-            letter-spacing: -2px;
-            margin-bottom: 22px;
-        }
-
-        .about-text p {
-            color: #68707a;
-            font-size: 17px;
-            max-width: 600px;
-        }
-
-        .about-tags {
-            display: flex;
-            gap: 10px;
-            flex-wrap: wrap;
-            margin-top: 28px;
-        }
-
-        .tag {
-            border: 1px solid #d9dde2;
-            background: white;
-            padding: 9px 13px;
-            border-radius: 30px;
-            font-size: 12px;
-            color: #555d66;
-        }
-
-        /* CTA */
-
-        .cta {
-            background: white;
-            text-align: center;
-        }
-
-        .cta .section-title {
-            margin-left: auto;
-            margin-right: auto;
-        }
-
-        .cta .section-description {
-            margin-left: auto;
-            margin-right: auto;
-            margin-bottom: 30px;
-        }
-
-        /* FOOTER */
-
-        footer {
-            background: #171a1f;
-            color: white;
-            padding: 55px 0 30px;
-        }
-
-        .footer-top {
-            display: flex;
-            justify-content: space-between;
-            gap: 40px;
-            padding-bottom: 45px;
-            border-bottom: 1px solid rgba(255,255,255,0.1);
-        }
-
-        .footer-brand {
-            font-size: 20px;
-            font-weight: 800;
-        }
-
-        .footer-brand span {
-            display: block;
-            color: #9ca3af;
-            font-size: 11px;
-            letter-spacing: 3px;
-            margin-top: 3px;
-        }
-
-        .footer-links {
-            display: flex;
-            gap: 25px;
-            color: #aeb4bc;
-            font-size: 13px;
-        }
-
-        .footer-bottom {
-            padding-top: 25px;
-            color: #737a83;
-            font-size: 12px;
-        }
-
-        /* MOBILE */
-
-        @media (max-width: 900px) {
-
-            .nav-links {
-                display: none;
-            }
-
-            .hero {
-                padding: 65px 0;
-            }
-
-            .hero-grid,
-            .private-grid,
-            .about-grid {
-                grid-template-columns: 1fr;
-            }
-
-            .hero h1 {
-                letter-spacing: -2px;
-            }
-
-            .hero-visual {
-                height: 330px;
-            }
-
-            .class-grid {
-                grid-template-columns: 1fr 1fr;
-            }
-
-            .system-header {
-                display: block;
-            }
-
-            .system-steps {
-                grid-template-columns: repeat(2, 1fr);
-                gap: 20px;
-                border-top: none;
-            }
-
-            .step {
-                border-right: none;
-                border-top: 1px solid #dfe2e6;
-                padding-top: 25px;
-            }
-
-            .resource-grid {
-                grid-template-columns: 1fr;
-            }
-
-            .about-box {
-                height: 280px;
-            }
-
-            .footer-top {
-                flex-direction: column;
-            }
-        }
-
-        @media (max-width: 560px) {
-
-            nav {
-                height: 68px;
-            }
-
-            .nav-button {
-                padding: 9px 13px;
-                font-size: 12px;
-            }
-
-            .hero {
-                min-height: auto;
-                padding: 55px 0 75px;
-            }
-
-            .hero h1 {
-                font-size: 48px;
-            }
-
-            .hero-text {
-                font-size: 16px;
-            }
-
-            .hero-visual {
-                height: 280px;
-            }
-
-            .math-symbol {
-                font-size: 75px;
-            }
-
-            .class-grid {
-                grid-template-columns: 1fr;
-            }
-
-            .features {
-                grid-template-columns: 1fr;
-            }
-
-            .about-text h2 {
-                font-size: 34px;
-            }
-
-            section {
-                padding: 80px 0;
-            }
-        }
-    </style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Gören Matematik | Matematiği Gör, Zirveyi Hedefle</title>
+
+  <meta name="description"
+        content="Gören Matematik - 5, 6, 7 ve 8. sınıf matematik eğitimi, LGS hazırlık, özel ders, ücretsiz kaynaklar ve öğrenci takibi.">
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      scroll-behavior: smooth;
+    }
+
+    :root {
+      --lacivert: #071c3b;
+      --lacivert2: #0b2a55;
+      --mavi: #168eea;
+      --acik-mavi: #55b8ff;
+      --beyaz: #ffffff;
+      --arka-plan: #f5f9ff;
+      --gri: #6d7b8d;
+      --koyu: #142033;
+    }
+
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+      background: var(--beyaz);
+      color: var(--koyu);
+      line-height: 1.6;
+    }
+
+    a {
+      text-decoration: none;
+    }
+
+    /* NAVBAR */
+
+    header {
+      width: 100%;
+      background: rgba(7, 28, 59, 0.97);
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      box-shadow: 0 4px 20px rgba(0,0,0,.12);
+    }
+
+    .navbar {
+      max-width: 1200px;
+      margin: auto;
+      padding: 12px 25px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 25px;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      color: white;
+      font-weight: 800;
+      font-size: 19px;
+    }
+
+    .brand img {
+      width: 58px;
+      height: 58px;
+      object-fit: contain;
+      background: white;
+      border-radius: 50%;
+      padding: 3px;
+    }
+
+    nav {
+      display: flex;
+      align-items: center;
+      gap: 24px;
+    }
+
+    nav a {
+      color: #eaf4ff;
+      font-size: 14px;
+      font-weight: 600;
+      transition: .3s;
+    }
+
+    nav a:hover {
+      color: var(--acik-mavi);
+    }
+
+    .nav-button {
+      background: var(--mavi);
+      padding: 10px 17px;
+      border-radius: 9px;
+      color: white !important;
+    }
+
+    /* HERO */
+
+    .hero {
+      min-height: 620px;
+      background:
+        radial-gradient(circle at 80% 20%, rgba(39,158,255,.35), transparent 28%),
+        radial-gradient(circle at 15% 80%, rgba(31,125,255,.2), transparent 30%),
+        linear-gradient(135deg, #06162f, #0b2d5c);
+      color: white;
+
+      display: flex;
+      align-items: center;
+      overflow: hidden;
+      position: relative;
+    }
+
+    .hero::before {
+      content: "π   √   ∞   x²   Δ   ∑";
+      position: absolute;
+      font-size: 90px;
+      font-weight: bold;
+      color: rgba(255,255,255,.025);
+      letter-spacing: 30px;
+      transform: rotate(-8deg);
+      top: 50px;
+      left: -40px;
+      white-space: nowrap;
+    }
+
+    .hero-container {
+      max-width: 1200px;
+      margin: auto;
+      padding: 70px 25px;
+      width: 100%;
+
+      display: grid;
+      grid-template-columns: 1.15fr .85fr;
+      gap: 60px;
+      align-items: center;
+      position: relative;
+      z-index: 2;
+    }
+
+    .hero-small {
+      display: inline-block;
+      color: #76c9ff;
+      font-size: 14px;
+      font-weight: 800;
+      letter-spacing: 2px;
+      margin-bottom: 15px;
+    }
+
+    .hero h1 {
+      font-size: clamp(47px, 7vw, 82px);
+      line-height: .95;
+      margin-bottom: 25px;
+      letter-spacing: -3px;
+    }
+
+    .hero h1 span {
+      color: #40adff;
+    }
+
+    .hero-slogan {
+      font-size: clamp(20px, 3vw, 29px);
+      max-width: 720px;
+      font-weight: 600;
+      margin-bottom: 17px;
+    }
+
+    .hero-description {
+      max-width: 650px;
+      color: #c9d8eb;
+      font-size: 16px;
+      margin-bottom: 32px;
+    }
+
+    .buttons {
+      display: flex;
+      gap: 13px;
+      flex-wrap: wrap;
+    }
+
+    .btn {
+      display: inline-block;
+      padding: 14px 23px;
+      border-radius: 10px;
+      font-weight: 700;
+      transition: .3s;
+    }
+
+    .btn-primary {
+      background: var(--mavi);
+      color: white;
+      box-shadow: 0 8px 25px rgba(22,142,234,.3);
+    }
+
+    .btn-primary:hover {
+      transform: translateY(-3px);
+      background: #29a1ff;
+    }
+
+    .btn-outline {
+      color: white;
+      border: 1px solid rgba(255,255,255,.3);
+      background: rgba(255,255,255,.06);
+    }
+
+    .btn-outline:hover {
+      background: white;
+      color: var(--lacivert);
+    }
+
+    .hero-logo-box {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .hero-logo {
+      width: min(390px, 90%);
+      aspect-ratio: 1;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      border-radius: 50%;
+      background:
+        linear-gradient(145deg, rgba(255,255,255,.14), rgba(255,255,255,.03));
+      border: 1px solid rgba(255,255,255,.13);
+      box-shadow:
+        0 25px 80px rgba(0,0,0,.3),
+        0 0 60px rgba(39,158,255,.13);
+      backdrop-filter: blur(15px);
+    }
+
+    .hero-logo img {
+      width: 78%;
+      height: 78%;
+      object-fit: contain;
+    }
+
+    /* GENEL */
+
+    section {
+      padding: 90px 25px;
+    }
+
+    .container {
+      max-width: 1200px;
+      margin: auto;
+    }
+
+    .section-tag {
+      color: var(--mavi);
+      font-size: 13px;
+      font-weight: 800;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      text-align: center;
+      margin-bottom: 8px;
+    }
+
+    .section-title {
+      text-align: center;
+      color: var(--lacivert);
+      font-size: clamp(30px, 4vw, 44px);
+      line-height: 1.15;
+      margin-bottom: 15px;
+    }
+
+    .section-description {
+      max-width: 650px;
+      margin: 0 auto 45px;
+      text-align: center;
+      color: var(--gri);
+    }
+
+    /* SINIFLAR */
+
+    .classes {
+      background: var(--arka-plan);
+    }
+
+    .class-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 18px;
+    }
+
+    .class-card {
+      background: white;
+      border-radius: 17px;
+      padding: 28px;
+      border: 1px solid #e4edf7;
+      transition: .3s;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .class-card::before {
+      content: "";
+      height: 5px;
+      width: 100%;
+      position: absolute;
+      top: 0;
+      left: 0;
+      background: linear-gradient(90deg, var(--mavi), var(--acik-mavi));
+    }
+
+    .class-card:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 20px 50px rgba(22,72,120,.12);
+    }
+
+    .class-number {
+      width: 55px;
+      height: 55px;
+      border-radius: 14px;
+      background: #eaf5ff;
+      color: var(--mavi);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 25px;
+      font-weight: 900;
+      margin-bottom: 22px;
+    }
+
+    .class-card h3 {
+      font-size: 21px;
+      color: var(--lacivert);
+      margin-bottom: 8px;
+    }
+
+    .class-card p {
+      font-size: 14px;
+      color: var(--gri);
+    }
+
+    .class-card a {
+      display: inline-block;
+      margin-top: 20px;
+      font-size: 14px;
+      color: var(--mavi);
+      font-weight: 800;
+    }
+
+    /* SİSTEM */
+
+    .system-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
+    }
+
+    .system-card {
+      border: 1px solid #e6edf6;
+      border-radius: 16px;
+      padding: 28px;
+      background: white;
+    }
+
+    .system-icon {
+      font-size: 30px;
+      margin-bottom: 15px;
+    }
+
+    .system-card h3 {
+      color: var(--lacivert);
+      margin-bottom: 8px;
+    }
+
+    .system-card p {
+      font-size: 14px;
+      color: var(--gri);
+    }
+
+    /* ÖZEL DERS */
+
+    .private-section {
+      background:
+        linear-gradient(135deg, rgba(7,28,59,.98), rgba(11,57,107,.96));
+      color: white;
+    }
+
+    .private-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 55px;
+      align-items: center;
+    }
+
+    .private-section .section-tag,
+    .private-section .section-title,
+    .private-section .section-description {
+      text-align: left;
+      margin-left: 0;
+      margin-right: 0;
+    }
+
+    .private-section .section-title {
+      color: white;
+    }
+
+    .private-section .section-description {
+      color: #c8d7e8;
+    }
+
+    .features {
+      display: grid;
+      gap: 13px;
+    }
+
+    .feature {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      color: #e8f3ff;
+    }
+
+    .tick {
+      width: 27px;
+      height: 27px;
+      flex: 0 0 27px;
+      border-radius: 50%;
+      background: var(--mavi);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 13px;
+      font-weight: 900;
+    }
+
+    .form-card {
+      background: white;
+      color: var(--koyu);
+      padding: 30px;
+      border-radius: 20px;
+      box-shadow: 0 30px 70px rgba(0,0,0,.25);
+    }
+
+    .form-card h3 {
+      color: var(--lacivert);
+      font-size: 24px;
+      margin-bottom: 6px;
+    }
+
+    .form-card > p {
+      color: var(--gri);
+      font-size: 14px;
+      margin-bottom: 20px;
+    }
+
+    .form-card input,
+    .form-card select,
+    .form-card textarea {
+      width: 100%;
+      padding: 13px;
+      margin-bottom: 11px;
+      border: 1px solid #dbe5ef;
+      border-radius: 9px;
+      font-family: inherit;
+      outline: none;
+    }
+
+    .form-card input:focus,
+    .form-card select:focus,
+    .form-card textarea:focus {
+      border-color: var(--mavi);
+    }
+
+    .form-button {
+      border: none;
+      width: 100%;
+      cursor: pointer;
+      font-size: 15px;
+    }
+
+    /* KAYNAKLAR */
+
+    .resources {
+      background: var(--arka-plan);
+    }
+
+    .resource-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 18px;
+    }
+
+    .resource-card {
+      background: white;
+      padding: 27px;
+      border-radius: 16px;
+      border: 1px solid #e4edf7;
+    }
+
+    .resource-card span {
+      font-size: 34px;
+    }
+
+    .resource-card h3 {
+      color: var(--lacivert);
+      margin: 14px 0 7px;
+    }
+
+    .resource-card p {
+      color: var(--gri);
+      font-size: 14px;
+    }
+
+    /* HAKKIMDA */
+
+    .about-grid {
+      display: grid;
+      grid-template-columns: .75fr 1.25fr;
+      gap: 50px;
+      align-items: center;
+    }
+
+    .about-image {
+      background: linear-gradient(145deg, #e7f4ff, #f6fbff);
+      min-height: 420px;
+      border-radius: 25px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .about-image img {
+      width: 70%;
+      object-fit: contain;
+    }
+
+    .about-text .section-tag,
+    .about-text .section-title {
+      text-align: left;
+    }
+
+    .about-text p {
+      color: var(--gri);
+      margin-bottom: 15px;
+    }
+
+    /* CTA */
+
+    .cta {
+      padding: 65px 25px;
+    }
+
+    .cta-box {
+      max-width: 1100px;
+      margin: auto;
+      border-radius: 25px;
+      padding: 50px;
+      text-align: center;
+      color: white;
+      background:
+        radial-gradient(circle at 90% 10%, rgba(83,189,255,.35), transparent 25%),
+        linear-gradient(135deg, #081d3b, #0d4380);
+    }
+
+    .cta-box h2 {
+      font-size: clamp(27px, 4vw, 40px);
+      margin-bottom: 10px;
+    }
+
+    .cta-box p {
+      color: #c9dcee;
+      margin-bottom: 25px;
+    }
+
+    /* FOOTER */
+
+    footer {
+      background: #05142b;
+      color: white;
+      padding: 45px 25px 25px;
+    }
+
+    .footer-inner {
+      max-width: 1200px;
+      margin: auto;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 25px;
+      padding-bottom: 30px;
+      border-bottom: 1px solid rgba(255,255,255,.1);
+    }
+
+    .footer-brand {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      font-weight: 800;
+    }
+
+    .footer-brand img {
+      width: 55px;
+      height: 55px;
+      object-fit: contain;
+    }
+
+    .footer-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 20px;
+    }
+
+    .footer-links a {
+      color: #b9cbe0;
+      font-size: 13px;
+    }
+
+    .copyright {
+      max-width: 1200px;
+      margin: auto;
+      text-align: center;
+      color: #73859c;
+      font-size: 12px;
+      padding-top: 23px;
+    }
+
+    /* MOBİL */
+
+    @media(max-width: 900px) {
+
+      nav {
+        display: none;
+      }
+
+      .hero-container {
+        grid-template-columns: 1fr;
+        text-align: center;
+      }
+
+      .hero-description {
+        margin-left: auto;
+        margin-right: auto;
+      }
+
+      .buttons {
+        justify-content: center;
+      }
+
+      .hero-logo {
+        max-width: 300px;
+      }
+
+      .class-grid,
+      .resource-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .system-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .private-grid,
+      .about-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .private-section .section-tag,
+      .private-section .section-title,
+      .private-section .section-description {
+        text-align: center;
+        margin-left: auto;
+        margin-right: auto;
+      }
+
+      .about-text .section-tag,
+      .about-text .section-title {
+        text-align: center;
+      }
+    }
+
+    @media(max-width: 560px) {
+
+      section {
+        padding: 65px 18px;
+      }
+
+      .navbar {
+        padding: 10px 17px;
+      }
+
+      .brand img {
+        width: 47px;
+        height: 47px;
+      }
+
+      .hero {
+        min-height: auto;
+      }
+
+      .hero-container {
+        padding: 60px 18px;
+        gap: 35px;
+      }
+
+      .hero h1 {
+        letter-spacing: -2px;
+      }
+
+      .class-grid,
+      .resource-grid,
+      .system-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .cta-box {
+        padding: 35px 20px;
+      }
+
+      .footer-inner {
+        flex-direction: column;
+        text-align: center;
+      }
+
+      .footer-links {
+        justify-content: center;
+      }
+    }
+  </style>
 </head>
+
 
 <body>
 
 <header>
-    <div class="container">
-        <nav>
-
-            <!DOCTYPE html>
-<html lang="tr">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-    <title>Gören Matematik | Matematiği Gör, Hedefine Ulaş</title>
-
-    <meta name="description" content="5, 6, 7 ve 8. sınıf öğrencileri için modern ve kişiye özel matematik eğitimi. LGS hazırlık, özel ders ve ücretsiz matematik kaynakları.">
-
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        html {
-            scroll-behavior: smooth;
-        }
-
-        body {
-            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif;
-            background: #f7f8fa;
-            color: #171a1f;
-            line-height: 1.6;
-        }
-
-        a {
-            text-decoration: none;
-            color: inherit;
-        }
-
-        .container {
-            width: min(1180px, 90%);
-            margin: auto;
-        }
-
-        /* NAVBAR */
-
-        header {
-            position: sticky;
-            top: 0;
-            z-index: 1000;
-            background: rgba(247, 248, 250, 0.92);
-            backdrop-filter: blur(14px);
-            border-bottom: 1px solid #e5e7eb;
-        }
-
-        nav {
-            height: 76px;
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-        }
-
-        .logo {
-            font-size: 19px;
-            font-weight: 800;
-            letter-spacing: -0.5px;
-        }
-
-        .logo span {
-            display: block;
-            font-size: 11px;
-            letter-spacing: 3px;
-            color: #69707a;
-            margin-top: -4px;
-        }
-
-        .nav-links {
-            display: flex;
-            align-items: center;
-            gap: 30px;
-            font-size: 14px;
-            color: #555c66;
-        }
-
-        .nav-links a {
-            transition: 0.25s;
-        }
-
-        .nav-links a:hover {
-            color: #111827;
-        }
-
-        .nav-button {
-            background: #171a1f;
-            color: white;
-            padding: 11px 19px;
-            border-radius: 8px;
-            font-size: 14px;
-            font-weight: 600;
-            transition: 0.25s;
-        }
-
-        .nav-button:hover {
-            transform: translateY(-2px);
-            background: #292e35;
-        }
-
-        /* HERO */
-
-        .hero {
-            min-height: 680px;
-            display: flex;
-            align-items: center;
-            padding: 90px 0;
-        }
-
-        .hero-grid {
-            display: grid;
-            grid-template-columns: 1.1fr 0.9fr;
-            gap: 70px;
-            align-items: center;
-        }
-
-        .eyebrow {
-            font-size: 13px;
-            font-weight: 700;
-            letter-spacing: 2px;
-            text-transform: uppercase;
-            color: #68707b;
-            margin-bottom: 22px;
-        }
-
-        .hero h1 {
-            font-size: clamp(48px, 6vw, 78px);
-            line-height: 0.98;
-            letter-spacing: -4px;
-            max-width: 700px;
-            margin-bottom: 28px;
-        }
-
-        .hero h1 span {
-            color: #6b7280;
-        }
-
-        .hero-text {
-            max-width: 570px;
-            font-size: 18px;
-            color: #656c76;
-            margin-bottom: 34px;
-        }
-
-        .hero-buttons {
-            display: flex;
-            gap: 14px;
-            flex-wrap: wrap;
-        }
-
-        .primary-button,
-        .secondary-button {
-            padding: 14px 22px;
-            border-radius: 9px;
-            font-weight: 600;
-            font-size: 14px;
-            transition: 0.25s;
-        }
-
-        .primary-button {
-            background: #171a1f;
-            color: white;
-        }
-
-        .primary-button:hover {
-            transform: translateY(-2px);
-            background: #292e35;
-        }
-
-        .secondary-button {
-            border: 1px solid #d7dbe0;
-            background: white;
-            color: #24282e;
-        }
-
-        .secondary-button:hover {
-            transform: translateY(-2px);
-            border-color: #aeb4bb;
-        }
-
-        /* MATHEMATICAL VISUAL */
-
-        .hero-visual {
-            height: 440px;
-            border-radius: 28px;
-            background: #171a1f;
-            position: relative;
-            overflow: hidden;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
-
-        .hero-visual::before,
-        .hero-visual::after {
-            content: "";
-            position: absolute;
-            border: 1px solid rgba(255,255,255,0.12);
-            border-radius: 50%;
-        }
-
-        .hero-visual::before {
-            width: 360px;
-            height: 360px;
-        }
-
-        .hero-visual::after {
-            width: 230px;
-            height: 230px;
-        }
-
-        .math-symbol {
-            position: relative;
-            z-index: 2;
-            color: white;
-            font-size: 100px;
-            font-weight: 300;
-            letter-spacing: -10px;
-        }
-
-        .math-small {
-            position: absolute;
-            color: rgba(255,255,255,0.3);
-            font-size: 22px;
-        }
-
-        .symbol-one {
-            top: 60px;
-            left: 60px;
-        }
-
-        .symbol-two {
-            right: 55px;
-            top: 115px;
-        }
-
-        .symbol-three {
-            bottom: 60px;
-            left: 75px;
-        }
-
-        .symbol-four {
-            right: 75px;
-            bottom: 70px;
-        }
-
-        /* SECTION */
-
-        section {
-            padding: 110px 0;
-        }
-
-        .section-label {
-            color: #737b85;
-            font-size: 12px;
-            font-weight: 700;
-            letter-spacing: 2px;
-            text-transform: uppercase;
-            margin-bottom: 16px;
-        }
-
-        .section-title {
-            font-size: clamp(34px, 4vw, 52px);
-            letter-spacing: -2px;
-            line-height: 1.05;
-            max-width: 700px;
-            margin-bottom: 22px;
-        }
-
-        .section-description {
-            color: #6b7280;
-            max-width: 620px;
-            font-size: 17px;
-        }
-
-        /* CLASSES */
-
-        .classes {
-            background: white;
-        }
-
-        .class-grid {
-            margin-top: 50px;
-            display: grid;
-            grid-template-columns: repeat(4, 1fr);
-            gap: 16px;
-        }
-
-        .class-card {
-            min-height: 270px;
-            border: 1px solid #e5e7eb;
-            border-radius: 18px;
-            padding: 28px;
-            display: flex;
-            flex-direction: column;
-            justify-content: space-between;
-            transition: 0.3s;
-            background: #fafafa;
-        }
-
-        .class-card:hover {
-            transform: translateY(-6px);
-            border-color: #c8cdd3;
-            box-shadow: 0 18px 45px rgba(20,25,30,0.07);
-        }
-
-        .class-number {
-            font-size: 13px;
-            color: #8a919a;
-            font-weight: 700;
-            letter-spacing: 1px;
-        }
-
-        .class-card h3 {
-            font-size: 25px;
-            letter-spacing: -1px;
-            margin-top: auto;
-            margin-bottom: 10px;
-        }
-
-        .class-card p {
-            font-size: 14px;
-            color: #747b84;
-        }
-
-        .class-link {
-            margin-top: 25px;
-            font-size: 13px;
-            font-weight: 700;
-        }
-
-        /* SYSTEM */
-
-        .system {
-            background: #f7f8fa;
-        }
-
-        .system-header {
-            display: flex;
-            justify-content: space-between;
-            gap: 50px;
-            align-items: end;
-            margin-bottom: 60px;
-        }
-
-        .system-steps {
-            display: grid;
-            grid-template-columns: repeat(6, 1fr);
-            border-top: 1px solid #dfe2e6;
-        }
-
-        .step {
-            padding: 30px 18px 10px 0;
-            border-right: 1px solid #dfe2e6;
-            margin-right: 18px;
-        }
-
-        .step:last-child {
-            border-right: none;
-        }
-
-        .step-number {
-            font-size: 12px;
-            color: #8a919a;
-            margin-bottom: 25px;
-        }
-
-        .step h3 {
-            font-size: 17px;
-            margin-bottom: 8px;
-        }
-
-        .step p {
-            font-size: 13px;
-            color: #737a84;
-        }
-
-        /* PRIVATE LESSON */
-
-        .private {
-            background: #171a1f;
-            color: white;
-        }
-
-        .private-grid {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 80px;
-            align-items: center;
-        }
-
-        .private .section-label {
-            color: #9ca3af;
-        }
-
-        .private .section-title {
-            color: white;
-        }
-
-        .private .section-description {
-            color: #aeb4bc;
-        }
-
-        .features {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 12px;
-            margin-top: 35px;
-        }
-
-        .feature {
-            border: 1px solid rgba(255,255,255,0.12);
-            border-radius: 12px;
-            padding: 18px;
-            color: #d5d8dc;
-            font-size: 14px;
-        }
-
-        .private-button {
-            display: inline-block;
-            margin-top: 35px;
-            background: white;
-            color: #171a1f;
-            padding: 14px 22px;
-            border-radius: 8px;
-            font-size: 14px;
-            font-weight: 700;
-        }
-
-        /* RESOURCES */
-
-        .resources {
-            background: white;
-        }
-
-        .resource-grid {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 18px;
-            margin-top: 45px;
-        }
-
-        .resource-card {
-            border: 1px solid #e5e7eb;
-            border-radius: 16px;
-            padding: 30px;
-            min-height: 190px;
-        }
-
-        .resource-card h3 {
-            font-size: 20px;
-            margin-bottom: 12px;
-        }
-
-        .resource-card p {
-            color: #737a84;
-            font-size: 14px;
-        }
-
-        /* ABOUT */
-
-        .about {
-            background: #f7f8fa;
-        }
-
-        .about-grid {
-            display: grid;
-            grid-template-columns: 0.8fr 1.2fr;
-            gap: 90px;
-            align-items: center;
-        }
-
-        .about-box {
-            height: 390px;
-            background: #e9ebee;
-            border-radius: 22px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: #858c95;
-            font-size: 14px;
-        }
-
-        .about-text h2 {
-            font-size: 42px;
-            letter-spacing: -2px;
-            margin-bottom: 22px;
-        }
-
-        .about-text p {
-            color: #68707a;
-            font-size: 17px;
-            max-width: 600px;
-        }
-
-        .about-tags {
-            display: flex;
-            gap: 10px;
-            flex-wrap: wrap;
-            margin-top: 28px;
-        }
-
-        .tag {
-            border: 1px solid #d9dde2;
-            background: white;
-            padding: 9px 13px;
-            border-radius: 30px;
-            font-size: 12px;
-            color: #555d66;
-        }
-
-        /* CTA */
-
-        .cta {
-            background: white;
-            text-align: center;
-        }
-
-        .cta .section-title {
-            margin-left: auto;
-            margin-right: auto;
-        }
-
-        .cta .section-description {
-            margin-left: auto;
-            margin-right: auto;
-            margin-bottom: 30px;
-        }
-
-        /* FOOTER */
-
-        footer {
-            background: #171a1f;
-            color: white;
-            padding: 55px 0 30px;
-        }
-
-        .footer-top {
-            display: flex;
-            justify-content: space-between;
-            gap: 40px;
-            padding-bottom: 45px;
-            border-bottom: 1px solid rgba(255,255,255,0.1);
-        }
-
-        .footer-brand {
-            font-size: 20px;
-            font-weight: 800;
-        }
-
-        .footer-brand span {
-            display: block;
-            color: #9ca3af;
-            font-size: 11px;
-            letter-spacing: 3px;
-            margin-top: 3px;
-        }
-
-        .footer-links {
-            display: flex;
-            gap: 25px;
-            color: #aeb4bc;
-            font-size: 13px;
-        }
-
-        .footer-bottom {
-            padding-top: 25px;
-            color: #737a83;
-            font-size: 12px;
-        }
-
-        /* MOBILE */
-
-        @media (max-width: 900px) {
-
-            .nav-links {
-                display: none;
-            }
-
-            .hero {
-                padding: 65px 0;
-            }
-
-            .hero-grid,
-            .private-grid,
-            .about-grid {
-                grid-template-columns: 1fr;
-            }
-
-            .hero h1 {
-                letter-spacing: -2px;
-            }
-
-            .hero-visual {
-                height: 330px;
-            }
-
-            .class-grid {
-                grid-template-columns: 1fr 1fr;
-            }
-
-            .system-header {
-                display: block;
-            }
-
-            .system-steps {
-                grid-template-columns: repeat(2, 1fr);
-                gap: 20px;
-                border-top: none;
-            }
-
-            .step {
-                border-right: none;
-                border-top: 1px solid #dfe2e6;
-                padding-top: 25px;
-            }
-
-            .resource-grid {
-                grid-template-columns: 1fr;
-            }
-
-            .about-box {
-                height: 280px;
-            }
-
-            .footer-top {
-                flex-direction: column;
-            }
-        }
-
-        @media (max-width: 560px) {
-
-            nav {
-                height: 68px;
-            }
-
-            .nav-button {
-                padding: 9px 13px;
-                font-size: 12px;
-            }
-
-            .hero {
-                min-height: auto;
-                padding: 55px 0 75px;
-            }
-
-            .hero h1 {
-                font-size: 48px;
-            }
-
-            .hero-text {
-                font-size: 16px;
-            }
-
-            .hero-visual {
-                height: 280px;
-            }
-
-            .math-symbol {
-                font-size: 75px;
-            }
-
-            .class-grid {
-                grid-template-columns: 1fr;
-            }
-
-            .features {
-                grid-template-columns: 1fr;
-            }
-
-            .about-text h2 {
-                font-size: 34px;
-            }
-
-            section {
-                padding: 80px 0;
-            }
-        }
-    </style>
-</head>
-
-<body>
-
-<header>
-    <div class="container">
-        <nav>
-
-            <a href="#anasayfa" class="logo">
-    <img src="goren-matematik-logo.png" alt="Gören Matematik">
-</a>
-
-            <div class="nav-links">
-                <a href="#siniflar">Sınıflar</a>
-                <a href="#sistem">Sistem</a>
-                <a href="#ozelders">Özel Ders</a>
-                <a href="#kaynaklar">Kaynaklar</a>
-                <a href="#hakkimda">Hakkımda</a>
-            </div>
-
-            <a href="#basvuru" class="nav-button">
-                Başvuru Yap →
-            </a>
-
-        </nav>
-    </div>
+  <div class="navbar">
+
+    <a href="#ana-sayfa" class="brand">
+      <img src="Adsız tasarım-3.png" alt="Gören Matematik Logo">
+      <span>GÖREN MATEMATİK</span>
+    </a>
+
+    <nav>
+      <a href="#ana-sayfa">Ana Sayfa</a>
+      <a href="#siniflar">Sınıflar</a>
+      <a href="#sistem">Sistem</a>
+      <a href="#kaynaklar">Kaynaklar</a>
+      <a href="#hakkimda">Hakkımda</a>
+      <a href="#ozel-ders" class="nav-button">Özel Ders</a>
+    </nav>
+
+  </div>
 </header>
 
 
 <main>
 
-    <!-- HERO -->
+  <!-- ANA SAYFA -->
 
-    <section class="hero" id="anasayfa">
+  <section class="hero" id="ana-sayfa">
 
-        <div class="container">
+    <div class="hero-container">
 
-            <div class="hero-grid">
+      <div>
 
-                <div>
+        <span class="hero-small">
+          MATEMATİĞİ SADECE ÇÖZME • GÖR
+        </span>
 
-                    <div class="eyebrow">
-                        5–8. Sınıf Matematik Eğitimi
-                    </div>
+        <h1>
+          GÖREN<br>
+          <span>MATEMATİK</span>
+        </h1>
 
-                    <h1>
-                        Matematiği Gör.
-                        <span>Hedefini Değiştir.</span>
-                    </h1>
+        <div class="hero-slogan">
+          Matematiği Görenlerin,<br>
+          Zirveyi Hedefleyenlerin Kanalı
+        </div>
 
-                    <p class="hero-text">
-                        Matematiği yalnızca çözmek değil, gerçekten anlamak için
-                        kişiye özel bir öğrenme sistemi.
-                    </p>
+        <p class="hero-description">
+          5, 6, 7 ve 8. sınıf öğrencileri için konu anlatımı,
+          yeni nesil soru çözümleri, LGS hazırlık, öğrenci takibi
+          ve kişiye özel matematik eğitimi.
+        </p>
 
-                    <div class="hero-buttons">
+        <div class="buttons">
+          <a href="#siniflar" class="btn btn-primary">
+            Sınıfını Seç →
+          </a>
 
-                        <a href="#ozelders" class="primary-button">
-                            Özel Dersi Keşfet →
-                        </a>
+          <a href="#ozel-ders" class="btn btn-outline">
+            Özel Ders Başvurusu
+          </a>
+        </div>
 
-                        <a href="#kaynaklar" class="secondary-button">
-                            Ücretsiz Kaynaklar
-                        </a>
+      </div>
 
-                    </div>
+      <div class="hero-logo-box">
+        <div class="hero-logo">
+          <img src="Adsız tasarım-3.png" alt="Gören Matematik">
+        </div>
+      </div>
 
-                </div>
+    </div>
+
+  </section>
 
 
-                <div class="hero-visual">
+  <!-- SINIFLAR -->
 
-                    <div class="math-small symbol-one">π</div>
-                    <div class="math-small symbol-two">∞</div>
-                    <div class="math-small symbol-three">∑</div>
-                    <div class="math-small symbol-four">√x</div>
+  <section class="classes" id="siniflar">
 
-                    <div class="math-symbol">
-                        ∫
-                    </div>
+    <div class="container">
 
-                </div>
+      <div class="section-tag">SINIFINI SEÇ</div>
 
-            </div>
+      <h2 class="section-title">
+        Matematik Yolculuğuna Başla
+      </h2>
+
+      <p class="section-description">
+        Her sınıf seviyesine özel konu anlatımları,
+        soru çözümleri ve çalışma içerikleri.
+      </p>
+
+
+      <div class="class-grid">
+
+        <div class="class-card">
+          <div class="class-number">5</div>
+          <h3>5. Sınıf Matematik</h3>
+          <p>
+            Matematiğin temelini sağlamlaştır,
+            yeni nesil düşünme becerilerini geliştir.
+          </p>
+          <a href="#">İçerikleri Gör →</a>
+        </div>
+
+
+        <div class="class-card">
+          <div class="class-number">6</div>
+          <h3>6. Sınıf Matematik</h3>
+          <p>
+            Konuları mantığıyla öğren,
+            problem çözme gücünü artır.
+          </p>
+          <a href="#">İçerikleri Gör →</a>
+        </div>
+
+
+        <div class="class-card">
+          <div class="class-number">7</div>
+          <h3>7. Sınıf Matematik</h3>
+          <p>
+            LGS öncesinde matematik temelini
+            güçlü ve sistemli hale getir.
+          </p>
+          <a href="#">İçerikleri Gör →</a>
+        </div>
+
+
+        <div class="class-card">
+          <div class="class-number">8</div>
+          <h3>8. Sınıf / LGS</h3>
+          <p>
+            LGS matematiğini analiz,
+            strateji ve yeni nesil sorularla öğren.
+          </p>
+          <a href="#">LGS'ye Başla →</a>
+        </div>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- SİSTEM -->
+
+  <section id="sistem">
+
+    <div class="container">
+
+      <div class="section-tag">GÖREN SİSTEM</div>
+
+      <h2 class="section-title">
+        Sadece Ders Değil, Bir Çalışma Sistemi
+      </h2>
+
+      <p class="section-description">
+        Öğrencinin seviyesini belirleyen,
+        gelişimini takip eden ve eksiklerini hedefleyen
+        sistemli bir matematik eğitimi.
+      </p>
+
+
+      <div class="system-grid">
+
+        <div class="system-card">
+          <div class="system-icon">🎯</div>
+          <h3>Seviye Analizi</h3>
+          <p>
+            Öğrencinin mevcut matematik seviyesi
+            ve konu eksikleri belirlenir.
+          </p>
+        </div>
+
+
+        <div class="system-card">
+          <div class="system-icon">📚</div>
+          <h3>Konu Öğrenimi</h3>
+          <p>
+            Ezber yerine matematiksel mantığı
+            anlamaya dayalı ders işlenir.
+          </p>
+        </div>
+
+
+        <div class="system-card">
+          <div class="system-icon">🧠</div>
+          <h3>Yeni Nesil Sorular</h3>
+          <p>
+            Muhakeme ve problem çözme becerileri
+            özel sorularla geliştirilir.
+          </p>
+        </div>
+
+
+        <div class="system-card">
+          <div class="system-icon">📊</div>
+          <h3>Deneme Analizi</h3>
+          <p>
+            Yanlışlar yalnızca sayılmaz;
+            nedenleri analiz edilir.
+          </p>
+        </div>
+
+
+        <div class="system-card">
+          <div class="system-icon">📈</div>
+          <h3>Öğrenci Takibi</h3>
+          <p>
+            Gelişim düzenli olarak takip edilir
+            ve çalışma programı güncellenir.
+          </p>
+        </div>
+
+
+        <div class="system-card">
+          <div class="system-icon">🏆</div>
+          <h3>Hedef Odaklı Çalışma</h3>
+          <p>
+            Öğrencinin hedefi doğrultusunda
+            kişiye özel çalışma sistemi oluşturulur.
+          </p>
+        </div>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- ÖZEL DERS -->
+
+  <section class="private-section" id="ozel-ders">
+
+    <div class="container private-grid">
+
+      <div>
+
+        <div class="section-tag">
+          BİREBİR MATEMATİK
+        </div>
+
+        <h2 class="section-title">
+          Kişiye Özel Matematik Eğitimi
+        </h2>
+
+        <p class="section-description">
+          Her öğrenci aynı şekilde öğrenmez.
+          Ders planı öğrencinin seviyesine,
+          eksiklerine ve hedefine göre oluşturulur.
+        </p>
+
+
+        <div class="features">
+
+          <div class="feature">
+            <span class="tick">✓</span>
+            Birebir matematik eğitimi
+          </div>
+
+          <div class="feature">
+            <span class="tick">✓</span>
+            Kişiye özel çalışma programı
+          </div>
+
+          <div class="feature">
+            <span class="tick">✓</span>
+            Düzenli öğrenci takibi
+          </div>
+
+          <div class="feature">
+            <span class="tick">✓</span>
+            Deneme ve yanlış analizi
+          </div>
+
+          <div class="feature">
+            <span class="tick">✓</span>
+            LGS hazırlık sistemi
+          </div>
 
         </div>
 
-    </section>
+      </div>
 
 
-    <!-- SINIFLAR -->
+      <div class="form-card">
 
-    <section class="classes" id="siniflar">
+        <h3>Özel Ders Başvurusu</h3>
 
-        <div class="container">
+        <p>
+          Öğrenci bilgilerini bırak,
+          uygun çalışma sistemini birlikte belirleyelim.
+        </p>
 
-            <div class="section-label">
-                Eğitim Seviyeleri
-            </div>
+        <form onsubmit="basvuruGonder(event)">
 
-            <h2 class="section-title">
-                Hangi sınıftasın?
-            </h2>
+          <input
+            type="text"
+            placeholder="Öğrenci Adı"
+            required
+          >
 
-            <p class="section-description">
-                Her sınıf seviyesine uygun, öğrencinin gelişimini merkeze alan
-                matematik çalışmaları.
-            </p>
+          <select required>
+            <option value="">Sınıf Seçiniz</option>
+            <option>5. Sınıf</option>
+            <option>6. Sınıf</option>
+            <option>7. Sınıf</option>
+            <option>8. Sınıf / LGS</option>
+          </select>
 
+          <input
+            type="tel"
+            placeholder="Telefon Numarası"
+            required
+          >
 
-            <div class="class-grid">
+          <textarea
+            rows="4"
+            placeholder="Öğrenci hakkında kısa bilgi..."
+          ></textarea>
 
-                <a href="#" class="class-card">
-                    <div class="class-number">05</div>
+          <button
+            class="btn btn-primary form-button"
+            type="submit"
+          >
+            Başvuru Gönder
+          </button>
 
-                    <div>
-                        <h3>5. Sınıf</h3>
-                        <p>
-                            Matematiğin temellerini sağlamlaştır.
-                        </p>
-                    </div>
+        </form>
 
-                    <div class="class-link">
-                        İncele →
-                    </div>
-                </a>
+      </div>
 
+    </div>
 
-                <a href="#" class="class-card">
-                    <div class="class-number">06</div>
-
-                    <div>
-                        <h3>6. Sınıf</h3>
-                        <p>
-                            Matematiksel düşünme becerini geliştir.
-                        </p>
-                    </div>
-
-                    <div class="class-link">
-                        İncele →
-                    </div>
-                </a>
+  </section>
 
 
-                <a href="#" class="class-card">
-                    <div class="class-number">07</div>
+  <!-- KAYNAKLAR -->
 
-                    <div>
-                        <h3>7. Sınıf</h3>
-                        <p>
-                            LGS yolculuğuna güçlü bir temel oluştur.
-                        </p>
-                    </div>
+  <section class="resources" id="kaynaklar">
 
-                    <div class="class-link">
-                        İncele →
-                    </div>
-                </a>
+    <div class="container">
+
+      <div class="section-tag">
+        ÜCRETSİZ İÇERİKLER
+      </div>
+
+      <h2 class="section-title">
+        Gören Matematik Kaynakları
+      </h2>
+
+      <p class="section-description">
+        Matematik çalışmalarını destekleyecek
+        ücretsiz eğitim içerikleri.
+      </p>
 
 
-                <a href="#" class="class-card">
-                    <div class="class-number">08</div>
+      <div class="resource-grid">
 
-                    <div>
-                        <h3>8. Sınıf · LGS</h3>
-                        <p>
-                            Hedefine sistemli ve bilinçli hazırlan.
-                        </p>
-                    </div>
-
-                    <div class="class-link">
-                        İncele →
-                    </div>
-                </a>
-
-            </div>
-
+        <div class="resource-card">
+          <span>📄</span>
+          <h3>PDF Kaynaklar</h3>
+          <p>
+            Konu föyleri, çalışma kağıtları
+            ve matematik etkinlikleri.
+          </p>
         </div>
 
-    </section>
 
-
-    <!-- SİSTEM -->
-
-    <section class="system" id="sistem">
-
-        <div class="container">
-
-            <div class="system-header">
-
-                <div>
-
-                    <div class="section-label">
-                        Gören Matematik Sistemi
-                    </div>
-
-                    <h2 class="section-title">
-                        Bir ders değil,
-                        bir sistem.
-                    </h2>
-
-                </div>
-
-                <p class="section-description">
-                    Öğrencinin yalnızca ders sırasında değil, tüm öğrenme
-                    sürecindeki gelişimini takip ediyoruz.
-                </p>
-
-            </div>
-
-
-            <div class="system-steps">
-
-                <div class="step">
-                    <div class="step-number">01</div>
-                    <h3>Analiz</h3>
-                    <p>Mevcut seviyeyi ve eksikleri belirle.</p>
-                </div>
-
-                <div class="step">
-                    <div class="step-number">02</div>
-                    <h3>Plan</h3>
-                    <p>Öğrenciye uygun çalışma yolunu oluştur.</p>
-                </div>
-
-                <div class="step">
-                    <div class="step-number">03</div>
-                    <h3>Ders</h3>
-                    <p>İhtiyaca göre birebir çalışma yap.</p>
-                </div>
-
-                <div class="step">
-                    <div class="step-number">04</div>
-                    <h3>Uygulama</h3>
-                    <p>Öğrenilen bilgiyi sorularla pekiştir.</p>
-                </div>
-
-                <div class="step">
-                    <div class="step-number">05</div>
-                    <h3>Ölçme</h3>
-                    <p>Gelişimi soru ve denemelerle değerlendir.</p>
-                </div>
-
-                <div class="step">
-                    <div class="step-number">06</div>
-                    <h3>Gelişim</h3>
-                    <p>Yeni eksikleri belirle ve süreci devam ettir.</p>
-                </div>
-
-            </div>
-
+        <div class="resource-card">
+          <span>📝</span>
+          <h3>Denemeler</h3>
+          <p>
+            Sınıf seviyesine ve LGS'ye
+            özel deneme sınavları.
+          </p>
         </div>
 
-    </section>
 
-
-    <!-- ÖZEL DERS -->
-
-    <section class="private" id="ozelders">
-
-        <div class="container">
-
-            <div class="private-grid">
-
-                <div>
-
-                    <div class="section-label">
-                        Birebir Eğitim
-                    </div>
-
-                    <h2 class="section-title">
-                        Sana özel bir
-                        matematik sistemi.
-                    </h2>
-
-                    <p class="section-description">
-                        Her öğrencinin öğrenme hızı, eksikleri ve hedefleri
-                        farklıdır. Bu nedenle ders sürecini öğrencinin
-                        ihtiyaçlarına göre şekillendiriyoruz.
-                    </p>
-
-                    <a href="#basvuru" class="private-button">
-                        Özel Ders Başvurusu →
-                    </a>
-
-                </div>
-
-
-                <div class="features">
-
-                    <div class="feature">
-                        <strong>Seviye Analizi</strong><br>
-                        Nerede olduğunu birlikte belirleyelim.
-                    </div>
-
-                    <div class="feature">
-                        <strong>Kişisel Program</strong><br>
-                        Hedefine uygun bir çalışma düzeni.
-                    </div>
-
-                    <div class="feature">
-                        <strong>Soru Takibi</strong><br>
-                        Ders dışındaki çalışmaları da önemseyelim.
-                    </div>
-
-                    <div class="feature">
-                        <strong>Deneme Analizi</strong><br>
-                        Yanlışlardan yeni çalışma alanları çıkaralım.
-                    </div>
-
-                </div>
-
-            </div>
-
+        <div class="resource-card">
+          <span>✏️</span>
+          <h3>Soru Çözümleri</h3>
+          <p>
+            Yeni nesil soruların
+            detaylı çözüm yöntemleri.
+          </p>
         </div>
 
-    </section>
 
-
-    <!-- KAYNAKLAR -->
-
-    <section class="resources" id="kaynaklar">
-
-        <div class="container">
-
-            <div class="section-label">
-                Ücretsiz Kaynaklar
-            </div>
-
-            <h2 class="section-title">
-                Öğrenmeye başlamak için
-                ihtiyacın olanlar.
-            </h2>
-
-            <p class="section-description">
-                Matematik çalışmalarında kullanabileceğin seçilmiş,
-                ücretsiz kaynaklar.
-            </p>
-
-
-            <div class="resource-grid">
-
-                <div class="resource-card">
-                    <h3>Çalışma Programları</h3>
-                    <p>
-                        Sınıf seviyene uygun düzenli çalışma programları.
-                    </p>
-                </div>
-
-                <div class="resource-card">
-                    <h3>Soru Paketleri</h3>
-                    <p>
-                        Konuları pekiştirmek için hazırlanmış soru çalışmaları.
-                    </p>
-                </div>
-
-                <div class="resource-card">
-                    <h3>Konu Takipleri</h3>
-                    <p>
-                        Matematikte hangi konuları tamamladığını takip et.
-                    </p>
-                </div>
-
-            </div>
-
+        <div class="resource-card">
+          <span>▶️</span>
+          <h3>Video İçerikleri</h3>
+          <p>
+            Konu anlatımı ve soru çözümü
+            video içerikleri.
+          </p>
         </div>
 
-    </section>
+      </div>
+
+    </div>
+
+  </section>
 
 
-    <!-- HAKKIMDA -->
+  <!-- HAKKIMDA -->
 
-    <section class="about" id="hakkimda">
+  <section id="hakkimda">
 
-        <div class="container">
+    <div class="container about-grid">
 
-            <div class="about-grid">
+      <div class="about-image">
+        <img
+          src="Adsız tasarım-3.png"
+          alt="Gören Matematik Logo"
+        >
+      </div>
 
-                <div class="about-box">
-                    HÜSEYİN GÖREN
-                </div>
 
-                <div class="about-text">
+      <div class="about-text">
 
-                    <div class="section-label">
-                        Hakkımda
-                    </div>
-
-                    <h2>
-                        Merhaba, ben
-                        Hüseyin Gören.
-                    </h2>
-
-                    <p>
-                        Matematik öğretmeniyim. Öğrencilerin matematiği yalnızca
-                        doğru cevaplamak yerine, neden ve nasıl çözdüğünü
-                        anlamasını hedefliyorum.
-                    </p>
-
-                    <div class="about-tags">
-                        <div class="tag">5–8. Sınıf Matematik</div>
-                        <div class="tag">LGS Hazırlık</div>
-                        <div class="tag">Birebir Eğitim</div>
-                    </div>
-
-                </div>
-
-            </div>
-
+        <div class="section-tag">
+          GÖREN MATEMATİK
         </div>
 
-    </section>
+        <h2 class="section-title">
+          Matematiği Ezberlemek Değil,
+          Görmek
+        </h2>
+
+        <p>
+          Gören Matematik; öğrencilerin matematiği
+          yalnızca formüller ve işlemler üzerinden değil,
+          mantığını anlayarak öğrenmesini amaçlayan
+          bir eğitim yaklaşımıdır.
+        </p>
+
+        <p>
+          Derslerde öğrencinin eksikleri belirlenir,
+          seviyesine uygun bir çalışma sistemi oluşturulur
+          ve gelişimi düzenli olarak takip edilir.
+        </p>
+
+        <p>
+          Amaç yalnızca daha fazla soru çözmek değil;
+          öğrencinin karşısına çıkan yeni bir soruda
+          nasıl düşüneceğini öğrenmesini sağlamaktır.
+        </p>
+
+        <a href="#ozel-ders" class="btn btn-primary">
+          Özel Ders Sistemini İncele
+        </a>
+
+      </div>
+
+    </div>
+
+  </section>
 
 
-    <!-- CTA -->
+  <!-- CTA -->
 
-    <section class="cta" id="basvuru">
+  <section class="cta">
 
-        <div class="container">
+    <div class="cta-box">
 
-            <div class="section-label">
-                Birlikte Başlayalım
-            </div>
+      <h2>
+        Matematiği Görmeye Hazır mısın?
+      </h2>
 
-            <h2 class="section-title">
-                Matematikte bir sonraki
-                adımını birlikte atalım.
-            </h2>
+      <p>
+        Seviyeni belirle, doğru sistemle çalış
+        ve matematik hedeflerine bir adım daha yaklaş.
+      </p>
 
-            <p class="section-description">
-                Öğrencinin seviyesini, hedefini ve ihtiyaçlarını birlikte
-                değerlendirelim.
-            </p>
+      <a href="#siniflar" class="btn btn-primary">
+        Hemen Başla →
+      </a>
 
-            <a href="mailto:iletisim@gorenmatematik.com" class="primary-button">
-                Özel Ders Başvurusu →
-            </a>
+    </div>
 
-        </div>
-
-    </section>
+  </section>
 
 </main>
 
 
-<!-- FOOTER -->
-
 <footer>
 
-    <div class="container">
+  <div class="footer-inner">
 
-        <div class="footer-top">
-
-            <div class="footer-brand">
-                GÖREN
-                <span>MATEMATİK</span>
-            </div>
-
-            <div class="footer-links">
-                <a href="#siniflar">Sınıflar</a>
-                <a href="#ozelders">Özel Ders</a>
-                <a href="#kaynaklar">Kaynaklar</a>
-                <a href="#hakkimda">Hakkımda</a>
-            </div>
-
-        </div>
-
-        <div class="footer-bottom">
-            © 2026 Gören Matematik. Tüm hakları saklıdır.
-        </div>
-
+    <div class="footer-brand">
+      <img src="Adsız tasarım-3.png" alt="Gören Matematik">
+      <span>GÖREN MATEMATİK</span>
     </div>
+
+
+    <div class="footer-links">
+      <a href="#ana-sayfa">Ana Sayfa</a>
+      <a href="#siniflar">Sınıflar</a>
+      <a href="#sistem">Sistem</a>
+      <a href="#ozel-ders">Özel Ders</a>
+      <a href="#kaynaklar">Kaynaklar</a>
+      <a href="#hakkimda">Hakkımda</a>
+    </div>
+
+  </div>
+
+
+  <div class="copyright">
+    © 2026 Gören Matematik • Tüm hakları saklıdır.
+  </div>
 
 </footer>
 
-</body>
-</html>
 
-            <div class="nav-links">
-                <a href="#siniflar">Sınıflar</a>
-                <a href="#sistem">Sistem</a>
-                <a href="#ozelders">Özel Ders</a>
-                <a href="#kaynaklar">Kaynaklar</a>
-                <a href="#hakkimda">Hakkımda</a>
-            </div>
+<script>
 
-            <a href="#basvuru" class="nav-button">
-                Başvuru Yap →
-            </a>
+  function basvuruGonder(event) {
 
-        </nav>
-    </div>
-</header>
+    event.preventDefault();
 
+    alert(
+      "Başvuru formu hazır. Bir sonraki aşamada bunu WhatsApp'a bağlayacağız."
+    );
 
-<main>
+  }
 
-    <!-- HERO -->
-
-    <section class="hero" id="anasayfa">
-
-        <div class="container">
-
-            <div class="hero-grid">
-
-                <div>
-
-                    <div class="eyebrow">
-                        5–8. Sınıf Matematik Eğitimi
-                    </div>
-
-                    <h1>
-                        Matematiği Gör.
-                        <span>Hedefini Değiştir.</span>
-                    </h1>
-
-                    <p class="hero-text">
-                        Matematiği yalnızca çözmek değil, gerçekten anlamak için
-                        kişiye özel bir öğrenme sistemi.
-                    </p>
-
-                    <div class="hero-buttons">
-
-                        <a href="#ozelders" class="primary-button">
-                            Özel Dersi Keşfet →
-                        </a>
-
-                        <a href="#kaynaklar" class="secondary-button">
-                            Ücretsiz Kaynaklar
-                        </a>
-
-                    </div>
-
-                </div>
-
-
-                <div class="hero-visual">
-
-                    <div class="math-small symbol-one">π</div>
-                    <div class="math-small symbol-two">∞</div>
-                    <div class="math-small symbol-three">∑</div>
-                    <div class="math-small symbol-four">√x</div>
-
-                    <div class="math-symbol">
-                        ∫
-                    </div>
-
-                </div>
-
-            </div>
-
-        </div>
-
-    </section>
-
-
-    <!-- SINIFLAR -->
-
-    <section class="classes" id="siniflar">
-
-        <div class="container">
-
-            <div class="section-label">
-                Eğitim Seviyeleri
-            </div>
-
-            <h2 class="section-title">
-                Hangi sınıftasın?
-            </h2>
-
-            <p class="section-description">
-                Her sınıf seviyesine uygun, öğrencinin gelişimini merkeze alan
-                matematik çalışmaları.
-            </p>
-
-
-            <div class="class-grid">
-
-                <a href="#" class="class-card">
-                    <div class="class-number">05</div>
-
-                    <div>
-                        <h3>5. Sınıf</h3>
-                        <p>
-                            Matematiğin temellerini sağlamlaştır.
-                        </p>
-                    </div>
-
-                    <div class="class-link">
-                        İncele →
-                    </div>
-                </a>
-
-
-                <a href="#" class="class-card">
-                    <div class="class-number">06</div>
-
-                    <div>
-                        <h3>6. Sınıf</h3>
-                        <p>
-                            Matematiksel düşünme becerini geliştir.
-                        </p>
-                    </div>
-
-                    <div class="class-link">
-                        İncele →
-                    </div>
-                </a>
-
-
-                <a href="#" class="class-card">
-                    <div class="class-number">07</div>
-
-                    <div>
-                        <h3>7. Sınıf</h3>
-                        <p>
-                            LGS yolculuğuna güçlü bir temel oluştur.
-                        </p>
-                    </div>
-
-                    <div class="class-link">
-                        İncele →
-                    </div>
-                </a>
-
-
-                <a href="#" class="class-card">
-                    <div class="class-number">08</div>
-
-                    <div>
-                        <h3>8. Sınıf · LGS</h3>
-                        <p>
-                            Hedefine sistemli ve bilinçli hazırlan.
-                        </p>
-                    </div>
-
-                    <div class="class-link">
-                        İncele →
-                    </div>
-                </a>
-
-            </div>
-
-        </div>
-
-    </section>
-
-
-    <!-- SİSTEM -->
-
-    <section class="system" id="sistem">
-
-        <div class="container">
-
-            <div class="system-header">
-
-                <div>
-
-                    <div class="section-label">
-                        Gören Matematik Sistemi
-                    </div>
-
-                    <h2 class="section-title">
-                        Bir ders değil,
-                        bir sistem.
-                    </h2>
-
-                </div>
-
-                <p class="section-description">
-                    Öğrencinin yalnızca ders sırasında değil, tüm öğrenme
-                    sürecindeki gelişimini takip ediyoruz.
-                </p>
-
-            </div>
-
-
-            <div class="system-steps">
-
-                <div class="step">
-                    <div class="step-number">01</div>
-                    <h3>Analiz</h3>
-                    <p>Mevcut seviyeyi ve eksikleri belirle.</p>
-                </div>
-
-                <div class="step">
-                    <div class="step-number">02</div>
-                    <h3>Plan</h3>
-                    <p>Öğrenciye uygun çalışma yolunu oluştur.</p>
-                </div>
-
-                <div class="step">
-                    <div class="step-number">03</div>
-                    <h3>Ders</h3>
-                    <p>İhtiyaca göre birebir çalışma yap.</p>
-                </div>
-
-                <div class="step">
-                    <div class="step-number">04</div>
-                    <h3>Uygulama</h3>
-                    <p>Öğrenilen bilgiyi sorularla pekiştir.</p>
-                </div>
-
-                <div class="step">
-                    <div class="step-number">05</div>
-                    <h3>Ölçme</h3>
-                    <p>Gelişimi soru ve denemelerle değerlendir.</p>
-                </div>
-
-                <div class="step">
-                    <div class="step-number">06</div>
-                    <h3>Gelişim</h3>
-                    <p>Yeni eksikleri belirle ve süreci devam ettir.</p>
-                </div>
-
-            </div>
-
-        </div>
-
-    </section>
-
-
-    <!-- ÖZEL DERS -->
-
-    <section class="private" id="ozelders">
-
-        <div class="container">
-
-            <div class="private-grid">
-
-                <div>
-
-                    <div class="section-label">
-                        Birebir Eğitim
-                    </div>
-
-                    <h2 class="section-title">
-                        Sana özel bir
-                        matematik sistemi.
-                    </h2>
-
-                    <p class="section-description">
-                        Her öğrencinin öğrenme hızı, eksikleri ve hedefleri
-                        farklıdır. Bu nedenle ders sürecini öğrencinin
-                        ihtiyaçlarına göre şekillendiriyoruz.
-                    </p>
-
-                    <a href="#basvuru" class="private-button">
-                        Özel Ders Başvurusu →
-                    </a>
-
-                </div>
-
-
-                <div class="features">
-
-                    <div class="feature">
-                        <strong>Seviye Analizi</strong><br>
-                        Nerede olduğunu birlikte belirleyelim.
-                    </div>
-
-                    <div class="feature">
-                        <strong>Kişisel Program</strong><br>
-                        Hedefine uygun bir çalışma düzeni.
-                    </div>
-
-                    <div class="feature">
-                        <strong>Soru Takibi</strong><br>
-                        Ders dışındaki çalışmaları da önemseyelim.
-                    </div>
-
-                    <div class="feature">
-                        <strong>Deneme Analizi</strong><br>
-                        Yanlışlardan yeni çalışma alanları çıkaralım.
-                    </div>
-
-                </div>
-
-            </div>
-
-        </div>
-
-    </section>
-
-
-    <!-- KAYNAKLAR -->
-
-    <section class="resources" id="kaynaklar">
-
-        <div class="container">
-
-            <div class="section-label">
-                Ücretsiz Kaynaklar
-            </div>
-
-            <h2 class="section-title">
-                Öğrenmeye başlamak için
-                ihtiyacın olanlar.
-            </h2>
-
-            <p class="section-description">
-                Matematik çalışmalarında kullanabileceğin seçilmiş,
-                ücretsiz kaynaklar.
-            </p>
-
-
-            <div class="resource-grid">
-
-                <div class="resource-card">
-                    <h3>Çalışma Programları</h3>
-                    <p>
-                        Sınıf seviyene uygun düzenli çalışma programları.
-                    </p>
-                </div>
-
-                <div class="resource-card">
-                    <h3>Soru Paketleri</h3>
-                    <p>
-                        Konuları pekiştirmek için hazırlanmış soru çalışmaları.
-                    </p>
-                </div>
-
-                <div class="resource-card">
-                    <h3>Konu Takipleri</h3>
-                    <p>
-                        Matematikte hangi konuları tamamladığını takip et.
-                    </p>
-                </div>
-
-            </div>
-
-        </div>
-
-    </section>
-
-
-    <!-- HAKKIMDA -->
-
-    <section class="about" id="hakkimda">
-
-        <div class="container">
-
-            <div class="about-grid">
-
-                <div class="about-box">
-                    HÜSEYİN GÖREN
-                </div>
-
-                <div class="about-text">
-
-                    <div class="section-label">
-                        Hakkımda
-                    </div>
-
-                    <h2>
-                        Merhaba, ben
-                        Hüseyin Gören.
-                    </h2>
-
-                    <p>
-                        Matematik öğretmeniyim. Öğrencilerin matematiği yalnızca
-                        doğru cevaplamak yerine, neden ve nasıl çözdüğünü
-                        anlamasını hedefliyorum.
-                    </p>
-
-                    <div class="about-tags">
-                        <div class="tag">5–8. Sınıf Matematik</div>
-                        <div class="tag">LGS Hazırlık</div>
-                        <div class="tag">Birebir Eğitim</div>
-                    </div>
-
-                </div>
-
-            </div>
-
-        </div>
-
-    </section>
-
-
-    <!-- CTA -->
-
-    <section class="cta" id="basvuru">
-
-        <div class="container">
-
-            <div class="section-label">
-                Birlikte Başlayalım
-            </div>
-
-            <h2 class="section-title">
-                Matematikte bir sonraki
-                adımını birlikte atalım.
-            </h2>
-
-            <p class="section-description">
-                Öğrencinin seviyesini, hedefini ve ihtiyaçlarını birlikte
-                değerlendirelim.
-            </p>
-
-            <a href="mailto:iletisim@gorenmatematik.com" class="primary-button">
-                Özel Ders Başvurusu →
-            </a>
-
-        </div>
-
-    </section>
-
-</main>
-
-
-<!-- FOOTER -->
-
-<footer>
-
-    <div class="container">
-
-        <div class="footer-top">
-
-            <div class="footer-brand">
-                GÖREN
-                <span>MATEMATİK</span>
-            </div>
-
-            <div class="footer-links">
-                <a href="#siniflar">Sınıflar</a>
-                <a href="#ozelders">Özel Ders</a>
-                <a href="#kaynaklar">Kaynaklar</a>
-                <a href="#hakkimda">Hakkımda</a>
-            </div>
-
-        </div>
-
-        <div class="footer-bottom">
-            © 2026 Gören Matematik. Tüm hakları saklıdır.
-        </div>
-
-    </div>
-
-</footer>
+</script>
 
 </body>
 </html>
