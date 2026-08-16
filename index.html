@@ -1052,11 +1052,43 @@
 
         <form onsubmit="basvuruGonder(event)">
 
-          <input
-            type="text"
-            placeholder="Öğrenci Adı"
-            required
-          >
+  <input
+    id="ogrenciAdi"
+    type="text"
+    placeholder="Öğrenci Adı"
+    required
+  >
+
+  <select id="sinif" required>
+    <option value="">Sınıf Seçiniz</option>
+    <option>5. Sınıf</option>
+    <option>6. Sınıf</option>
+    <option>7. Sınıf</option>
+    <option>8. Sınıf / LGS</option>
+  </select>
+
+  <input
+    id="telefon"
+    type="tel"
+    placeholder="Telefon Numarası"
+    required
+  >
+
+  <textarea
+    id="aciklama"
+    rows="4"
+    placeholder="Öğrenci hakkında kısa bilgi..."
+  ></textarea>
+
+  <button
+    class="btn btn-primary form-button"
+    type="submit"
+  >
+    WhatsApp'tan Başvuru Gönder
+  </button>
+
+</form>
+            
 
           <select required>
             <option value="">Sınıf Seçiniz</option>
