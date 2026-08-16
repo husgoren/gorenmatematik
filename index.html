@@ -237,11 +237,30 @@
       backdrop-filter: blur(15px);
     }
 
-    .hero-logo img {
-      width: 78%;
-      height: 78%;
-      object-fit: contain;
-    }
+    .hero-logo {
+  width: min(390px, 90%);
+  aspect-ratio: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+  overflow: hidden;
+  background:
+    linear-gradient(145deg, rgba(255,255,255,.14), rgba(255,255,255,.03));
+  border: 1px solid rgba(255,255,255,.13);
+  box-shadow:
+    0 25px 80px rgba(0,0,0,.3),
+    0 0 60px rgba(39,158,255,.13);
+  backdrop-filter: blur(15px);
+}
+
+.hero-logo img {
+  width: 88%;
+  height: 88%;
+  object-fit: cover;
+  border-radius: 50%;
+  display: block;
+}
 
     /* GENEL */
 
