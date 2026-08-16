@@ -811,6 +811,37 @@ nav a:hover {
 
 </footer>
 
+<script>
 
+function menuAcKapat() {
+
+  const menu = document.querySelector(".navbar nav");
+  const buton = document.querySelector(".menu-toggle");
+
+  menu.classList.toggle("active");
+
+  if (menu.classList.contains("active")) {
+    buton.textContent = "✕";
+  } else {
+    buton.textContent = "☰";
+  }
+
+}
+
+document.querySelectorAll(".navbar nav a").forEach(link => {
+
+  link.addEventListener("click", function() {
+
+    const menu = document.querySelector(".navbar nav");
+    const buton = document.querySelector(".menu-toggle");
+
+    menu.classList.remove("active");
+    buton.textContent = "☰";
+
+  });
+
+});
+
+</script>
 </body>
 </html>
