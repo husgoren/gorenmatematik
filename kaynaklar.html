@@ -1,0 +1,845 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Ücretsiz Matematik Kaynakları | Gören Matematik</title>
+
+  <meta name="description"
+        content="Gören Matematik 5, 6, 7 ve 8. sınıf ücretsiz matematik PDF kaynakları, çalışma kağıtları ve denemeler.">
+
+  <style>
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      scroll-behavior: smooth;
+    }
+
+    :root {
+      --lacivert: #071c3b;
+      --lacivert2: #0b2a55;
+      --mavi: #168eea;
+      --acik-mavi: #55b8ff;
+      --beyaz: #ffffff;
+      --arka-plan: #f5f9ff;
+      --gri: #6d7b8d;
+      --koyu: #142033;
+    }
+
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+      background: var(--arka-plan);
+      color: var(--koyu);
+      line-height: 1.6;
+    }
+
+    a {
+      text-decoration: none;
+    }
+
+    /* HEADER */
+
+    header {
+      background: var(--lacivert);
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      box-shadow: 0 4px 20px rgba(0,0,0,.12);
+    }
+
+    .navbar {
+      max-width: 1200px;
+      margin: auto;
+      padding: 12px 25px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 20px;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      color: white;
+      font-weight: 800;
+      font-size: 19px;
+    }
+
+    .brand img {
+      width: 55px;
+      height: 55px;
+      object-fit: cover;
+      border-radius: 50%;
+      clip-path: circle(48% at 50% 50%);
+    }
+
+    nav {
+      display: flex;
+      gap: 22px;
+      align-items: center;
+    }
+
+    nav a {
+      color: #eaf4ff;
+      font-size: 14px;
+      font-weight: 600;
+    }
+
+    nav a:hover {
+      color: var(--acik-mavi);
+    }
+
+    .home-button {
+      background: var(--mavi);
+      padding: 10px 17px;
+      border-radius: 9px;
+      color: white;
+    }
+
+    /* HERO */
+
+    .hero {
+      background:
+        radial-gradient(
+          circle at 80% 20%,
+          rgba(39,158,255,.35),
+          transparent 30%
+        ),
+        radial-gradient(
+          circle at 15% 80%,
+          rgba(31,125,255,.18),
+          transparent 30%
+        ),
+        linear-gradient(
+          135deg,
+          #06162f,
+          #0b2d5c
+        );
+
+      color: white;
+      padding: 90px 25px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hero::before {
+      content: "π   √   ∞   x²   ∑";
+      position: absolute;
+      font-size: 90px;
+      color: rgba(255,255,255,.025);
+      font-weight: bold;
+      top: 20px;
+      left: -30px;
+      letter-spacing: 30px;
+      white-space: nowrap;
+    }
+
+    .hero-inner {
+      max-width: 1200px;
+      margin: auto;
+      position: relative;
+      z-index: 2;
+    }
+
+    .hero-tag {
+      color: #71c8ff;
+      font-weight: 800;
+      letter-spacing: 2px;
+      font-size: 14px;
+      margin-bottom: 15px;
+    }
+
+    .hero h1 {
+      font-size: clamp(42px, 7vw, 70px);
+      line-height: 1;
+      margin-bottom: 20px;
+    }
+
+    .hero h1 span {
+      color: var(--acik-mavi);
+    }
+
+    .hero p {
+      color: #cbd9e9;
+      max-width: 720px;
+      font-size: 18px;
+    }
+
+    /* SINIF SEÇ */
+
+    .class-select {
+      padding: 55px 25px;
+      background: white;
+    }
+
+    .class-buttons {
+      max-width: 900px;
+      margin: auto;
+      display: grid;
+      grid-template-columns: repeat(4,1fr);
+      gap: 14px;
+    }
+
+    .class-button {
+      padding: 18px;
+      text-align: center;
+      border-radius: 13px;
+      background: #eef7ff;
+      border: 1px solid #dbeafa;
+      color: var(--lacivert);
+      font-weight: 800;
+      transition: .3s;
+    }
+
+    .class-button:hover {
+      background: var(--mavi);
+      color: white;
+      transform: translateY(-4px);
+    }
+
+    /* GENEL */
+
+    section.resources-section {
+      padding: 80px 25px;
+    }
+
+    section.resources-section:nth-of-type(even) {
+      background: white;
+    }
+
+    .container {
+      max-width: 1200px;
+      margin: auto;
+    }
+
+    .section-tag {
+      color: var(--mavi);
+      font-size: 13px;
+      font-weight: 800;
+      letter-spacing: 2px;
+      text-align: center;
+      margin-bottom: 8px;
+    }
+
+    .section-title {
+      color: var(--lacivert);
+      text-align: center;
+      font-size: clamp(30px,4vw,42px);
+      margin-bottom: 12px;
+    }
+
+    .section-description {
+      max-width: 650px;
+      margin: 0 auto 40px;
+      text-align: center;
+      color: var(--gri);
+    }
+
+    /* PDF KARTLARI */
+
+    .resource-grid {
+      display: grid;
+      grid-template-columns: repeat(3,1fr);
+      gap: 20px;
+    }
+
+    .resource-card {
+      background: white;
+      border-radius: 18px;
+      border: 1px solid #e1eaf5;
+      padding: 26px;
+      transition: .3s;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .resource-card:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 20px 50px rgba(20,70,120,.12);
+    }
+
+    .resource-card::before {
+      content: "";
+      position: absolute;
+      height: 5px;
+      width: 100%;
+      left: 0;
+      top: 0;
+      background:
+        linear-gradient(
+          90deg,
+          var(--mavi),
+          var(--acik-mavi)
+        );
+    }
+
+    .pdf-icon {
+      width: 55px;
+      height: 55px;
+      border-radius: 14px;
+      background: #eaf5ff;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 27px;
+      margin-bottom: 18px;
+    }
+
+    .resource-card h3 {
+      color: var(--lacivert);
+      margin-bottom: 8px;
+      font-size: 20px;
+    }
+
+    .resource-card p {
+      color: var(--gri);
+      font-size: 14px;
+      margin-bottom: 20px;
+    }
+
+    .resource-info {
+      font-size: 12px;
+      color: #8997a8;
+      margin-bottom: 18px;
+    }
+
+    .resource-actions {
+      display: flex;
+      gap: 9px;
+      flex-wrap: wrap;
+    }
+
+    .btn {
+      display: inline-block;
+      padding: 10px 15px;
+      border-radius: 9px;
+      font-weight: 700;
+      font-size: 13px;
+      transition: .3s;
+    }
+
+    .btn-primary {
+      color: white;
+      background: var(--mavi);
+    }
+
+    .btn-primary:hover {
+      background: #087fd5;
+    }
+
+    .btn-outline {
+      border: 1px solid #d4e1ef;
+      color: var(--lacivert);
+      background: #f8fbff;
+    }
+
+    .btn-outline:hover {
+      background: #eaf5ff;
+    }
+
+    .soon {
+      display: inline-block;
+      padding: 9px 14px;
+      background: #edf2f7;
+      color: #7b8998;
+      border-radius: 9px;
+      font-weight: 700;
+      font-size: 12px;
+    }
+
+    /* BİLGİ */
+
+    .info-section {
+      padding: 60px 25px;
+    }
+
+    .info-box {
+      max-width: 1050px;
+      margin: auto;
+      border-radius: 24px;
+      padding: 45px;
+      background:
+        radial-gradient(
+          circle at 90% 10%,
+          rgba(83,189,255,.35),
+          transparent 25%
+        ),
+        linear-gradient(
+          135deg,
+          #071c3b,
+          #0d4380
+        );
+
+      color: white;
+      text-align: center;
+    }
+
+    .info-box h2 {
+      font-size: clamp(27px,4vw,38px);
+      margin-bottom: 10px;
+    }
+
+    .info-box p {
+      color: #c9dcee;
+      max-width: 700px;
+      margin: 0 auto 22px;
+    }
+
+    /* FOOTER */
+
+    footer {
+      background: #05142b;
+      color: white;
+      padding: 35px 25px;
+    }
+
+    .footer-inner {
+      max-width: 1200px;
+      margin: auto;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 20px;
+    }
+
+    .footer-brand {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-weight: 800;
+    }
+
+    .footer-brand img {
+      width: 50px;
+      height: 50px;
+      object-fit: cover;
+      border-radius: 50%;
+      clip-path: circle(48% at 50% 50%);
+    }
+
+    .copyright {
+      color: #7f92a9;
+      font-size: 12px;
+    }
+
+    /* MOBİL */
+
+    @media(max-width:900px) {
+
+      nav {
+        display: none;
+      }
+
+      .class-buttons {
+        grid-template-columns: repeat(2,1fr);
+      }
+
+      .resource-grid {
+        grid-template-columns: repeat(2,1fr);
+      }
+    }
+
+    @media(max-width:560px) {
+
+      .hero {
+        padding: 65px 18px;
+      }
+
+      .class-buttons,
+      .resource-grid {
+        grid-template-columns: 1fr;
+      }
+
+      section.resources-section {
+        padding: 60px 18px;
+      }
+
+      .info-box {
+        padding: 35px 20px;
+      }
+
+      .footer-inner {
+        flex-direction: column;
+        text-align: center;
+      }
+    }
+
+  </style>
+</head>
+
+
+<body>
+
+
+<header>
+
+  <div class="navbar">
+
+    <a href="index.html" class="brand">
+
+      <img
+        src="Adsız tasarım-3.png"
+        alt="Gören Matematik"
+      >
+
+      GÖREN MATEMATİK
+
+    </a>
+
+
+    <nav>
+
+      <a href="#5-sinif">
+        5. Sınıf
+      </a>
+
+      <a href="#6-sinif">
+        6. Sınıf
+      </a>
+
+      <a href="#7-sinif">
+        7. Sınıf
+      </a>
+
+      <a href="#8-sinif">
+        8. Sınıf / LGS
+      </a>
+
+      <a
+        href="index.html"
+        class="home-button"
+      >
+        Ana Sayfa
+      </a>
+
+    </nav>
+
+  </div>
+
+</header>
+
+
+<!-- HERO -->
+
+<section class="hero">
+
+  <div class="hero-inner">
+
+    <div class="hero-tag">
+      GÖREN MATEMATİK • ÜCRETSİZ KAYNAKLAR
+    </div>
+
+    <h1>
+      MATEMATİK<br>
+      <span>KAYNAKLARI</span>
+    </h1>
+
+    <p>
+      5, 6, 7 ve 8. sınıf öğrencileri için
+      çalışma kağıtları, konu föyleri, testler,
+      denemeler ve ücretsiz PDF kaynakları.
+    </p>
+
+  </div>
+
+</section>
+
+
+<!-- SINIF SEÇ -->
+
+<section class="class-select">
+
+  <div class="class-buttons">
+
+    <a href="#5-sinif" class="class-button">
+      5. Sınıf
+    </a>
+
+    <a href="#6-sinif" class="class-button">
+      6. Sınıf
+    </a>
+
+    <a href="#7-sinif" class="class-button">
+      7. Sınıf
+    </a>
+
+    <a href="#8-sinif" class="class-button">
+      8. Sınıf / LGS
+    </a>
+
+  </div>
+
+</section>
+
+
+<!-- 5 SINIF -->
+
+<section
+  class="resources-section"
+  id="5-sinif"
+>
+
+  <div class="container">
+
+    <div class="section-tag">
+      GÖREN MATEMATİK
+    </div>
+
+    <h2 class="section-title">
+      5. Sınıf Kaynakları
+    </h2>
+
+    <p class="section-description">
+      5. sınıf matematik çalışmalarını
+      destekleyecek ücretsiz içerikler.
+    </p>
+
+
+    <div class="resource-grid">
+
+      <div class="resource-card">
+
+        <div class="pdf-icon">
+          📄
+        </div>
+
+        <h3>
+          5. Sınıf PDF Kaynakları
+        </h3>
+
+        <p>
+          Konu anlatımları, etkinlikler
+          ve çalışma kağıtları burada yayınlanacak.
+        </p>
+
+        <span class="soon">
+          İlk kaynak yakında
+        </span>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- 6 SINIF -->
+
+<section
+  class="resources-section"
+  id="6-sinif"
+>
+
+  <div class="container">
+
+    <div class="section-tag">
+      GÖREN MATEMATİK
+    </div>
+
+    <h2 class="section-title">
+      6. Sınıf Kaynakları
+    </h2>
+
+    <p class="section-description">
+      6. sınıf matematik konularına
+      özel ücretsiz çalışma materyalleri.
+    </p>
+
+
+    <div class="resource-grid">
+
+      <div class="resource-card">
+
+        <div class="pdf-icon">
+          📄
+        </div>
+
+        <h3>
+          6. Sınıf PDF Kaynakları
+        </h3>
+
+        <p>
+          Çalışma kağıtları, testler
+          ve konu föyleri burada yayınlanacak.
+        </p>
+
+        <span class="soon">
+          İlk kaynak yakında
+        </span>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- 7 SINIF -->
+
+<section
+  class="resources-section"
+  id="7-sinif"
+>
+
+  <div class="container">
+
+    <div class="section-tag">
+      GÖREN MATEMATİK
+    </div>
+
+    <h2 class="section-title">
+      7. Sınıf Kaynakları
+    </h2>
+
+    <p class="section-description">
+      7. sınıf matematik ve LGS öncesi
+      hazırlık çalışmalarını destekleyen kaynaklar.
+    </p>
+
+
+    <div class="resource-grid">
+
+      <div class="resource-card">
+
+        <div class="pdf-icon">
+          📄
+        </div>
+
+        <h3>
+          7. Sınıf PDF Kaynakları
+        </h3>
+
+        <p>
+          Konu testleri, yeni nesil sorular
+          ve çalışma föyleri burada yayınlanacak.
+        </p>
+
+        <span class="soon">
+          İlk kaynak yakında
+        </span>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- 8 SINIF -->
+
+<section
+  class="resources-section"
+  id="8-sinif"
+>
+
+  <div class="container">
+
+    <div class="section-tag">
+      LGS MATEMATİK
+    </div>
+
+    <h2 class="section-title">
+      8. Sınıf / LGS Kaynakları
+    </h2>
+
+    <p class="section-description">
+      LGS matematiği için yeni nesil sorular,
+      çalışma föyleri, denemeler ve PDF kaynakları.
+    </p>
+
+
+    <div class="resource-grid">
+
+      <div class="resource-card">
+
+        <div class="pdf-icon">
+          📄
+        </div>
+
+        <h3>
+          LGS PDF Kaynakları
+        </h3>
+
+        <p>
+          LGS çalışma kağıtları,
+          yeni nesil sorular ve denemeler.
+        </p>
+
+        <span class="soon">
+          İlk kaynak yakında
+        </span>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- ALT BİLGİ -->
+
+<section class="info-section">
+
+  <div class="info-box">
+
+    <h2>
+      Yeni Kaynaklar Düzenli Olarak Eklenecek
+    </h2>
+
+    <p>
+      Gören Matematik kaynakları öğrencilerin
+      konu eksiklerini tamamlamasına ve
+      matematik becerilerini geliştirmesine
+      yardımcı olmak amacıyla hazırlanır.
+    </p>
+
+    <a
+      href="index.html#ozel-ders"
+      class="btn btn-primary"
+    >
+      Özel Ders Başvurusu →
+    </a>
+
+  </div>
+
+</section>
+
+
+<footer>
+
+  <div class="footer-inner">
+
+    <div class="footer-brand">
+
+      <img
+        src="Adsız tasarım-3.png"
+        alt="Gören Matematik"
+      >
+
+      GÖREN MATEMATİK
+
+    </div>
+
+    <div class="copyright">
+      © 2026 Gören Matematik • Tüm hakları saklıdır.
+    </div>
+
+  </div>
+
+</footer>
+
+
+</body>
+</html>
