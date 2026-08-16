@@ -602,7 +602,69 @@
       color: var(--gri);
       margin-bottom: 15px;
     }
+/* SOSYAL MEDYA */
 
+.social-section {
+  background: var(--arka-plan);
+}
+
+.social-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 22px;
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.social-card {
+  background: white;
+  border: 1px solid #e4edf7;
+  border-radius: 20px;
+  padding: 32px;
+  display: block;
+  transition: .3s;
+}
+
+.social-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 20px 45px rgba(22,72,120,.12);
+}
+
+.social-icon {
+  font-size: 38px;
+  margin-bottom: 16px;
+}
+
+.social-card h3 {
+  color: var(--lacivert);
+  font-size: 22px;
+  margin-bottom: 6px;
+}
+
+.social-user {
+  color: var(--mavi);
+  font-weight: 800;
+  font-size: 14px;
+  margin-bottom: 12px;
+}
+
+.social-card p {
+  color: var(--gri);
+  font-size: 14px;
+  margin-bottom: 20px;
+}
+
+.social-link {
+  color: var(--mavi);
+  font-weight: 800;
+  font-size: 14px;
+}
+
+@media(max-width: 560px) {
+  .social-grid {
+    grid-template-columns: 1fr;
+  }
+}
     /* CTA */
 
     .cta {
