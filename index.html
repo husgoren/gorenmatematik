@@ -647,14 +647,58 @@
       font-size: 12px;
       padding-top: 23px;
     }
-
+.menu-toggle {
+  display: none;
+  width: 46px;
+  height: 46px;
+  border-radius: 10px;
+  border: 1px solid rgba(255,255,255,.2);
+  background: rgba(255,255,255,.08);
+  color: white;
+  font-size: 25px;
+  cursor: pointer;
+  align-items: center;
+  justify-content: center;
+}
     /* MOBİL */
 
     @media(max-width: 900px) {
 
-      nav {
-        display: none;
-      }
+      .menu-toggle {
+  display: flex;
+}
+
+.navbar {
+  flex-wrap: wrap;
+}
+
+nav {
+  display: none;
+  width: 100%;
+  flex-direction: column;
+  align-items: stretch;
+  gap: 0;
+  padding: 10px 0 5px;
+  border-top: 1px solid rgba(255,255,255,.1);
+}
+
+nav.active {
+  display: flex;
+}
+
+nav a {
+  padding: 12px 10px;
+  text-align: center;
+  border-radius: 8px;
+}
+
+nav a:hover {
+  background: rgba(255,255,255,.06);
+}
+
+nav .nav-button {
+  margin-top: 5px;
+}
 
       .hero-container {
         grid-template-columns: 1fr;
@@ -762,7 +806,14 @@
       <img src="Adsız tasarım-3.png" alt="Gören Matematik Logo">
       <span>GÖREN MATEMATİK</span>
     </a>
-
+<button
+  class="menu-toggle"
+  type="button"
+  onclick="menuAcKapat()"
+  aria-label="Menüyü aç veya kapat"
+>
+  ☰
+</button>
     <nav>
       <a href="#ana-sayfa">Ana Sayfa</a>
       <a href="#siniflar">Sınıflar</a>
@@ -1303,7 +1354,20 @@
 
 
 <script>
+function menuAcKapat() {
 
+  const menu = document.querySelector(".navbar nav");
+  const buton = document.querySelector(".menu-toggle");
+
+  menu.classList.toggle("active");
+
+  if (menu.classList.contains("active")) {
+    buton.textContent = "✕";
+  } else {
+    buton.textContent = "☰";
+  }
+
+}
 function basvuruGonder(event) {
 
   event.preventDefault();
